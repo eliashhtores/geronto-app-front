@@ -1,7 +1,10 @@
 const url = new URL(window.location.href)
-const server = 'http://localhost:3000'
 const http = new EasyHTTP()
 const prescription_id = url.searchParams.get('id')
+
+let server = 'http://localhost:3000'
+if (window.location.hostname !== '127.0.0.1')
+    server = 'https://drab-jade-cricket-tam.cyclic.app'
 
 const name = document.querySelector('.name')
 const age = document.querySelector('.age')

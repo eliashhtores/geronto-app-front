@@ -1,9 +1,12 @@
-const server = 'http://localhost:3000'
 const storage = localStorage
 const http = new EasyHTTP()
 const doctor_name = document.querySelector('.doctor_name')
 
 let session = JSON.parse(storage.getItem('session'))
+
+let server = 'http://localhost:3000'
+if (window.location.hostname !== '127.0.0.1')
+    server = 'https://drab-jade-cricket-tam.cyclic.app'
 
 const getSessionData = () => {
     if (storage.getItem('session')) {

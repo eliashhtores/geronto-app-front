@@ -1,8 +1,11 @@
-const server = 'http://localhost:3000'
 const http = new EasyHTTP()
 const username = document.querySelector('#username')
 const password = document.querySelector('#password')
 const submit = document.querySelector('#submit')
+
+let server = 'http://localhost:3000'
+if (window.location.hostname !== '127.0.0.1')
+    server = 'https://drab-jade-cricket-tam.cyclic.app'
 
 const createSession = (data) => {
     const storage = localStorage
